@@ -1,0 +1,9 @@
+*/__pycache__
+*.pyc
+*.swp
+*.pth
+mmcap.egg-info/*
+data/*
+checkpoints/*
+tests/test_examples/*
+results/*

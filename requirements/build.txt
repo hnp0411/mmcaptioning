@@ -1,0 +1,3 @@
+# These must be installed before building jonathan intelligence framework
+cython
+numpy
