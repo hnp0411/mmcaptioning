@@ -5,6 +5,46 @@ from ..builder import PIPELINES
 
 
 @PIPELINES.register_module()
+class PreprocessCaption(object):
+    """ Preprocess caption by caption annotation
+    
+    """
+    def __init__(self,
+                 caption_type:str):
+        self.caption_type = caption_type
+
+    def _preprocess_acryl_caption(self, results):
+        raw_cap = results['raw_cap']
+        # TODO : convert to regular exp
+        if '.,' in raw_cap:
+            cap = raw_cap.split('.,')[0] + '.'
+        elif '. ,' in raw_cap:
+            cap = raw_cap.split('. ,')[0] + '.'
+        elif '\n' in raw_cap:
+            cap = raw_cap.split('\n')[0]
+        else:
+            cap = raw_cap
+
+        results['raw_cap'] = cap
+        return results
+
+#        print('raw : ', raw_cap)
+#        print('processed : ', cap)
+#        breakpoint()
+
+    def __call__(self, results:dict):
+        if self.caption_type == 'kor':
+            return results
+        elif self.caption_type == 'acryl':
+            results = self._preprocess_acryl_caption(results)
+            return results
+
+    def __repr__(self):
+        repr_str = self.__class__.__name__
+        return repr_str
+
+
+@PIPELINES.register_module()
 class EncodeCaption(object):
     """ Encode given captions
 

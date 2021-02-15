@@ -7,7 +7,7 @@ from .formating import (Collect,
                         ImageToTensor, ToDataContainer, 
                         ToTensor, ToTensorCaptioning, Transpose, to_tensor)
 from .test_time_aug import MultiScaleFlipAug
-from .encode_caption import EncodeCaption
+from .encode_caption import PreprocessCaption, EncodeCaption
 from .create_img_mask import CreateImgMask
 
 
@@ -21,6 +21,6 @@ __all__ = [
     'ImageToTensor', 'ToDataContainer', 
     'ToTensor', 'ToTensorCaptioning', 'Transpose', 'to_tensor',
     'MultiScaleFlipAug',
-    'EncodeCaption',
+    'PreprocessCaption', 'EncodeCaption',
     'CreateImgMask',
 ]

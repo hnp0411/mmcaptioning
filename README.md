@@ -6,7 +6,7 @@ $ ./build_docker_img.sh
 $ ./docker/build_*.sh
 
 도커 컨테이너에서 
-$ pip install -v -e .
+$ python setup.py develop
 
 
 Config 명명 규칙

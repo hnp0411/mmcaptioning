@@ -29,6 +29,8 @@ train_pipeline=[
     dict(type='CreateImgMask', max_dim=max_dim),
     # preprocess caption
     dict(type='LoadCaption'),
+    dict(type='PreprocessCaption',
+         caption_type='kor'),
     dict(type='EncodeCaption',
          caption_max_length=128,
          padding='max_length',
@@ -50,6 +52,8 @@ test_pipeline=[
     dict(type='CreateImgMask', max_dim=max_dim),
     # preprocess caption
     dict(type='LoadCaption'),
+    dict(type='PreprocessCaption',
+         caption_type='kor'),
     dict(type='EncodeCaption',
          caption_max_length=128,
          padding='max_length',

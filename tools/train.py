@@ -163,8 +163,9 @@ def main():
     # build dataset
     datasets = [build_dataset(cfg.data.train)]
     # debug
-#    x = datasets[0].__getitem__(0)
-#    breakpoint()
+    #x = datasets[0].__getitem__(0)
+#    for i in range(100):
+#        x = datasets[0].__getitem__(i)
 
     # not used
     if len(cfg.workflow) == 2:
