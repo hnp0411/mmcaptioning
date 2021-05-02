@@ -1,13 +1,17 @@
-도커 이미지 빌드
-$ chmod 755 build_docker_img.sh
-$ ./build_docker_img.sh
+# MMCaptioning
 
-도커 컨테이너 빌드
-$ ./docker/build_*.sh
+## Introduction
+MMCaptioning is image captioning project based on [OpenMMLab](https://openmmlab.com) [MMDetection](https://github.com/open-mmlab/mmdetection) framework, stems from the codebase developed by the *MMDet* team, who won [COCO Detection Challenge](http://cocodataset.org/#detection-leaderboard) in 2018.
 
-도커 컨테이너에서 
-$ python setup.py develop
+![demo image](resources/demo_sample.jpg)
+![demo result](resources/result.jpg)
 
+### Major features
+- **Modular Design**
+  Like the MMDetection framework, I decompose the captioning framework into different components and one can easily construct a customized image captioning framework by combining different modules.
 
-Config 명명 규칙
-[Encoder]_[Decoder]_[Tokenizer]_[TotalEpochs]_[MixedPrecisionTraining]_[Dataset]_[Distributed]
+- **Support of multiple image feature extractors**
+  The toolbox directly supports popular image feature extractors, *e.g.* ResNet, Res2Net, Resnext, etc.
+
+## License
+This project is released under the [Apache 2.0 license](LICENSE).
